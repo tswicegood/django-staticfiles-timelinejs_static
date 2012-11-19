@@ -5,7 +5,7 @@ into a Django app for use with Django staticfiles.
 import subprocess
 import sys
 
-DEFAULT_VERSION = "v2.18"
+DEFAULT_VERSION = "2.18"
 
 
 def cp(src):
@@ -21,7 +21,7 @@ def main():
     }
     subprocess.call(["mkdir -p ./timelinejs_static/static/timelinejs_static"], shell=True)
     subprocess.call(
-            ["cd vendor/TimelineJS && git checkout %(version)s" % args],
+            ["cd vendor/TimelineJS && git checkout v%(version)s" % args],
             shell=True)
     [cp(a) for a in ["css", "js"]]
 
